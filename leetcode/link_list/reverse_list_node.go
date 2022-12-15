@@ -35,7 +35,7 @@ func iteratorReverseList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
-	newHead := iteratorReverseList(head)
+	newHead := iteratorReverseList(head.Next)
 	head.Next.Next = head
 	head.Next = nil
 

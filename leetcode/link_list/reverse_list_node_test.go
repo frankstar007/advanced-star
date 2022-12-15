@@ -25,6 +25,17 @@ func Test_iteratorReverseList(t *testing.T) {
 		// TODO: Add test cases.
 		{
 			name: "iterator reverse link list",
+			args: args{
+				head: &ListNode{
+					Val: 1,
+					Next: &ListNode{
+						Val: 2,
+						Next: &ListNode{
+							Val: 3,
+						},
+					},
+				},
+			},
 
 		},
 	}
