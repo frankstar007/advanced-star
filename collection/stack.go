@@ -42,6 +42,16 @@ func (s *Stack) Pop() Element {
 	return e
 }
 
+func (s *Stack) Top() Element {
+	s.lock.Lock()
+	defer s.lock.Unlock()
+	if s.Empty() {
+		return nil
+	}
+	e := s.element[s.Len() - 1]
+	return e
+}
+
 
 func (s *Stack) Empty() bool {
 	return s.Len() == 0
