@@ -45,10 +45,7 @@ func heapify(tree []int, n, index int) {
 
 }
 
-//swap 交换数组元素
-func swap(tree []int, i, j int) {
-	tree[i], tree[j] = tree[j], tree[i]
-}
+
 
 //buildHeap 构建堆
 func buildHeap(tree []int, n int) {

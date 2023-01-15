@@ -31,3 +31,21 @@ func (L *ListNode) ToString() string {
 	}
 	return strings.TrimRight(sb.String(), ",")
 }
+
+func (L *ListNode) Equal(o *ListNode) bool {
+	this := L
+	if o == nil {
+		return false
+	}
+	for this != nil && o != nil {
+		if this.Val != o.Val {
+			return false
+		}
+		this =  this.Next
+		o = o.Next
+	}
+	if o != nil && this != nil{
+		return false
+	}
+	return  true
+}
