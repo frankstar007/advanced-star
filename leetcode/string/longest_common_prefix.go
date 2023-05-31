@@ -51,3 +51,37 @@ func longestCommonPrefix(strs []string) string {
 	return minStr
 
 }
+
+
+//分治法
+func lcp(strs []string) string {
+	if len(strs) <= 0 {
+		return ""
+	}
+	return recursionLCP(strs, 0, len(strs) - 1)
+}
+
+func recursionLCP(strs []string, start int, end int) string {
+	if start == end {
+		return strs[start]
+	}else {
+		mid := (end - start) / 2 + start
+		left := recursionLCP(strs, start, mid - 1)
+		right := recursionLCP(strs, mid + 1, end)
+		return commonPrefix(left, right)
+	}
+
+}
+
+func commonPrefix(left string, right string) string {
+	minLength := len(right)
+	if len(left) < len(right) {
+		minLength = len(left)
+	}
+	for i := 0; i < minLength; i ++ {
+		if left[i] != right[i] {
+			return left[:i]
+		}
+	}
+	return left[:minLength]
+}

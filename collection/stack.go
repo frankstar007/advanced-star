@@ -25,6 +25,14 @@ func NewStack() *Stack {
 	}
 }
 
+func (s *Stack) Elements() []Element {
+	result := make([]Element, 0)
+	for _, e := range s.element {
+		result = append(result, e)
+	}
+	return result
+}
+
 func (s *Stack) Push(item interface{}) {
 	s.lock.Lock()
 	defer s.lock.Unlock()

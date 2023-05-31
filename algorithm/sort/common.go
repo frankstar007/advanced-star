@@ -12,3 +12,16 @@ package sort
 func swap(nums []int, i, j int) {
 	nums[i], nums[j] = nums[j], nums[i]
 }
+
+func Swap(arr []interface{}, i, j int) {
+	arr[i], arr[j] = arr[j], arr[i]
+}
+
+
+func MaxInt(i, j int) int {
+	if i > j {
+		return i
+	}
+
+	return j
+}
